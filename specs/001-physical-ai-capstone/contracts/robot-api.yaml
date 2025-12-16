@@ -1,0 +1,315 @@
+openapi: 3.0.0
+info:
+  title: Physical AI Robot API
+  description: API for controlling and monitoring the Physical AI Capstone robot
+  version: 1.0.0
+  contact:
+    name: Physical AI Team
+    email: physical-ai@humanoid-robotics.org
+
+servers:
+  - url: http://localhost:8080
+    description: Local development server
+
+paths:
+  /voice/command:
+    post:
+      summary: Process a voice command
+      description: Send a voice command to the robot for processing
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VoiceCommandRequest'
+      responses:
+        '200':
+          description: Command processed successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommandResponse'
+        '400':
+          description: Invalid command format
+        '500':
+          description: Processing error
+
+  /navigation/goal:
+    post:
+      summary: Set navigation goal
+      description: Set a navigation goal for the robot
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NavigationGoal'
+      responses:
+        '200':
+          description: Navigation goal accepted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NavigationResponse'
+        '400':
+          description: Invalid goal coordinates
+        '500':
+          description: Navigation error
+
+  /object/detect:
+    get:
+      summary: Detect objects in environment
+      description: Get list of detected objects in robot's field of view
+      responses:
+        '200':
+          description: Object detection results
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DetectedObject'
+        '500':
+          description: Detection error
+
+  /robot/state:
+    get:
+      summary: Get robot state
+      description: Get current state of the robot
+      responses:
+        '200':
+          description: Current robot state
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RobotState'
+        '500':
+          description: State retrieval error
+
+  /safety/emergency-stop:
+    post:
+      summary: Trigger emergency stop
+      description: Immediately stop all robot motion for safety
+      responses:
+        '200':
+          description: Emergency stop activated
+        '500':
+          description: Emergency stop failed
+
+components:
+  schemas:
+    VoiceCommandRequest:
+      type: object
+      required:
+        - command_text
+        - source
+      properties:
+        command_text:
+          type: string
+          description: The text of the voice command
+          example: "Go to the kitchen and find the red cup"
+        source:
+          type: string
+          description: Source of the command (voice, text, etc.)
+          example: "voice"
+        confidence:
+          type: number
+          format: float
+          minimum: 0.0
+          maximum: 1.0
+          description: Confidence level of the command
+          example: 0.95
+
+    CommandResponse:
+      type: object
+      required:
+        - status
+        - message
+      properties:
+        status:
+          type: string
+          enum: [success, error, pending]
+          description: Status of the command processing
+        message:
+          type: string
+          description: Human-readable response message
+          example: "Command understood, executing navigation to kitchen"
+        task_id:
+          type: string
+          description: ID of the created task sequence
+          example: "task-12345"
+
+    NavigationGoal:
+      type: object
+      required:
+        - x
+        - y
+        - theta
+      properties:
+        x:
+          type: number
+          format: float
+          description: X coordinate in map frame
+          example: 1.5
+        y:
+          type: number
+          format: float
+          description: Y coordinate in map frame
+          example: 2.0
+        theta:
+          type: number
+          format: float
+          description: Orientation in radians
+          example: 0.0
+        frame_id:
+          type: string
+          description: Coordinate frame ID
+          default: "map"
+
+    NavigationResponse:
+      type: object
+      required:
+        - status
+        - message
+      properties:
+        status:
+          type: string
+          enum: [success, error, in_progress]
+          description: Status of navigation request
+        message:
+          type: string
+          description: Response message
+          example: "Navigating to goal position"
+        path_length:
+          type: number
+          format: float
+          description: Length of planned path in meters
+
+    DetectedObject:
+      type: object
+      required:
+        - id
+        - name
+        - confidence
+        - position
+      properties:
+        id:
+          type: string
+          description: Unique object identifier
+          example: "obj-001"
+        name:
+          type: string
+          description: Object class name
+          example: "red_cup"
+        confidence:
+          type: number
+          format: float
+          minimum: 0.0
+          maximum: 1.0
+          description: Recognition confidence
+          example: 0.87
+        position:
+          $ref: '#/components/schemas/Position3D'
+        dimensions:
+          $ref: '#/components/schemas/Dimensions3D'
+
+    Position3D:
+      type: object
+      required:
+        - x
+        - y
+        - z
+      properties:
+        x:
+          type: number
+          format: float
+          description: X coordinate
+          example: 0.5
+        y:
+          type: number
+          format: float
+          description: Y coordinate
+          example: 1.2
+        z:
+          type: number
+          format: float
+          description: Z coordinate
+          example: 0.8
+
+    Dimensions3D:
+      type: object
+      required:
+        - width
+        - height
+        - depth
+      properties:
+        width:
+          type: number
+          format: float
+          description: Object width in meters
+          example: 0.08
+        height:
+          type: number
+          format: float
+          description: Object height in meters
+          example: 0.1
+        depth:
+          type: number
+          format: float
+          description: Object depth in meters
+          example: 0.08
+
+    RobotState:
+      type: object
+      required:
+        - state
+        - position
+        - battery_level
+        - safety_status
+      properties:
+        state:
+          type: string
+          enum: [IDLE, LISTENING, PROCESSING, NAVIGATING, MANIPULATING, ERROR, EMERGENCY_STOP]
+          description: Current robot state
+          example: "LISTENING"
+        position:
+          $ref: '#/components/schemas/Pose2D'
+        battery_level:
+          type: number
+          format: float
+          minimum: 0.0
+          maximum: 1.0
+          description: Battery charge level
+          example: 0.75
+        safety_status:
+          type: string
+          enum: [SAFE, WARNING, DANGER, EMERGENCY]
+          description: Current safety status
+          example: "SAFE"
+        timestamp:
+          type: string
+          format: date-time
+          description: When state was last updated
+
+    Pose2D:
+      type: object
+      required:
+        - x
+        - y
+        - theta
+      properties:
+        x:
+          type: number
+          format: float
+          description: X coordinate
+          example: 0.0
+        y:
+          type: number
+          format: float
+          description: Y coordinate
+          example: 0.0
+        theta:
+          type: number
+          format: float
+          description: Orientation in radians
+          example: 0.0

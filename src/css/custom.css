@@ -1,0 +1,1307 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #4da6ff; /* Professional blue */
+  --ifm-color-primary-dark: #2d90ff;
+  --ifm-color-primary-darker: #1a80ff;
+  --ifm-color-primary-darkest: #0066cc;
+  --ifm-color-primary-light: #66b3ff;
+  --ifm-color-primary-lighter: #80c0ff;
+  --ifm-color-primary-lightest: #cce6ff;
+
+  --ifm-background-color: #ffffff; /* Light mode background - white */
+  --ifm-background-surface-color: #f8f8f8; /* Light mode surface */
+  --ifm-text-color: #000000; /* Light mode text - pure black */
+  --ifm-text-color-secondary: #333333; /* Light mode secondary text */
+  --ifm-text-color-emphasis: #000000; /* Light mode emphasis - black */
+
+  --ifm-border-color: #dddddd; /* Light mode borders */
+
+  /* Heading colors */
+  --ifm-heading-color: #000000; /* Light mode headings - pure black */
+  --ifm-heading-color-secondary: #333333; /* Light mode secondary headings */
+
+  /* Code and syntax highlighting */
+  --ifm-code-background: rgba(245, 245, 245, 0.6); /* Light code bg */
+  --ifm-code-color: #000000; /* Light code text - black */
+  --docusaurus-highlighted-code-line-bg: rgba(200, 200, 200, 0.3); /* Light highlight */
+
+  /* Link colors */
+  --ifm-link-color: #1a66cc; /* Professional blue links */
+  --ifm-link-hover-color: #0055aa; /* Darker blue on hover */
+
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* Dark mode with softer text on dark backgrounds for book reading */
+[data-theme='dark'] {
+  /* Global dark mode color system - Soft, readable text on dark backgrounds */
+  --ifm-color-primary: #5d9bff; /* Bright professional blue */
+  --ifm-color-primary-dark: #3a85ff;
+  --ifm-color-primary-darker: #2a7aff;
+  --ifm-color-primary-darkest: #1a66cc;
+  --ifm-color-primary-light: #7ab8ff;
+  --ifm-color-primary-lighter: #8dc4ff;
+  --ifm-color-primary-lightest: #bfe2ff;
+
+  /* Backgrounds - Soft dark for eye comfort */
+  --ifm-background-color: #1a1a24; /* Soft dark background */
+  --ifm-background-surface-color: #1a1a24; /* Consistent soft dark surface */
+  --ifm-background-surface-color-overlay: rgba(26, 26, 36, 0.8); /* Overlay surfaces */
+  --ifm-background-elevation: #161620; /* For elevated elements */
+
+  /* Text colors - Soft white for comfortable reading */
+  --ifm-text-color: #e8e8f0; /* Soft white for primary text - easier on eyes */
+  --ifm-text-color-secondary: #d0d0e0; /* Soft secondary text */
+  --ifm-text-color-inverse: #1a1a24; /* Inverse text color */
+  --ifm-text-color-emphasis: #f0f0f8; /* Emphasized text */
+  --ifm-text-color-muted: #b8b8c8; /* Muted text */
+  --ifm-text-color-disabled: #9494a8; /* Disabled text */
+
+  /* Heading colors - Bright but not harsh */
+  --ifm-heading-color: #ffffff; /* Clean white for headings */
+  --ifm-heading-color-secondary: #f0f0f8; /* Soft white for secondary headings */
+  --ifm-heading-color-accent: #a0c0ff; /* Accent headings */
+
+  /* Border colors - Visible on dark backgrounds */
+  --ifm-border-color: #3a3a50; /* Standard borders */
+  --ifm-border-color-light: #2d2d40; /* Lighter borders */
+  --ifm-border-color-heavy: #4a4a60; /* Heavier borders */
+  --ifm-toc-border-color: #3a3a50; /* Table of contents borders */
+
+  /* Link colors - Bright for visibility */
+  --ifm-link-color: #6cb0ff; /* Primary links - bright blue */
+  --ifm-link-hover-color: #8fc8ff; /* Hover links - lighter blue */
+  --ifm-link-decoration: underline; /* Always visible links */
+  --ifm-link-hover-decoration: underline; /* Consistent hover decoration */
+
+  /* Button and interactive colors */
+  --ifm-button-background-color: #252535;
+  --ifm-button-border-color: #4a4a60;
+  --ifm-button-color: #e8e8f0; /* Soft white button text */
+  --ifm-button-background-color--hover: #303040;
+  --ifm-button-border-color--hover: #5a5a70;
+
+  /* Code and syntax highlighting - Readable on dark */
+  --ifm-code-background: rgba(45, 45, 65, 0.4); /* Softer code background */
+  --ifm-code-color: #d0d0e0; /* Soft white code text */
+  --ifm-pre-background: #161620; /* Dark preformatted background */
+  --ifm-pre-color: #e8e8f0; /* Soft white preformatted text */
+  --ifm-pre-border-color: #3a3a50; /* Preformatted border */
+  --docusaurus-highlighted-code-line-bg: rgba(90, 90, 140, 0.3); /* Softer highlight */
+
+  /* Success, warning, danger colors - Adjusted for dark mode */
+  --ifm-color-success: #6bcf7f; /* Bright green */
+  --ifm-color-info: #6cb0ff; /* Bright blue */
+  --ifm-color-warning: #ffd966; /* Bright yellow */
+  --ifm-color-danger: #ff6b6b; /* Bright red */
+
+  /* Shadow and elevation - Subtle but effective */
+  --ifm-global-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --ifm-global-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --ifm-global-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --ifm-global-shadow-xl: 0 12px 48px rgba(0, 0, 0, 0.6);
+
+  /* Spacing and sizing - Maintained for readability */
+  --ifm-global-spacing: 1rem;
+  --ifm-global-radius: 6px;
+}
+
+/* Custom styles for the hero section - Book-style with pure white text in dark mode */
+.hero-section {
+  position: relative;
+  overflow: hidden;
+  padding: 6rem 0; /* Reduced padding for better book proportions */
+  background: linear-gradient(135deg, #0a0a0f 0%, #121218 50%, #0f0f16 100%); /* Refined dark gradient */
+  color: #ffffff; /* Pure white text */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh; /* Reduced height for better proportions */
+  border-bottom: 2px solid rgba(93, 155, 255, 0.2); /* Stronger book-style border */
+  font-family: 'Georgia', 'Times New Roman', serif; /* Book-style font */
+}
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  z-index: 10;
+}
+
+.hero-text-content {
+  flex: 1;
+  max-width: 60%;
+}
+
+.hero-title {
+  font-size: 3.5rem; /* Slightly smaller for better proportions */
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  line-height: 1.2;
+  color: #ffffff; /* Pure white for maximum contrast */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); /* Subtle shadow for depth */
+  letter-spacing: -0.3px;
+  font-family: 'Georgia', 'Times New Roman', serif; /* Book-style font */
+}
+
+.hero-subtitle {
+  font-size: 1.4rem; /* Slightly smaller for better hierarchy */
+  margin-bottom: 2rem;
+  line-height: 1.5;
+  color: #ffffff; /* Pure white for readability */
+  opacity: 1;
+  font-weight: 400;
+  font-family: 'Georgia', 'Times New Roman', serif; /* Book-style font */
+}
+
+.hero-button {
+  display: inline-block;
+  background-color: #5d9bff; /* Enhanced professional blue button */
+  color: #ffffff; /* White text for button */
+  padding: 0.8rem 2rem;
+  border-radius: 6px; /* More book-style rounded */
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(93, 155, 255, 0.3);
+  font-family: 'Georgia', 'Times New Roman', serif; /* Book-style font */
+}
+
+.hero-button:hover {
+  background-color: #7ab8ff; /* Lighter blue on hover */
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(93, 155, 255, 0.4);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.hero-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(93, 155, 255, 0.3);
+}
+
+.hero-illustration {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 40%;
+}
+
+.robot-illustration {
+  border: 1px solid rgba(93, 155, 255, 0.2); /* Subtler border */
+  border-radius: 12px; /* More book-style rounded */
+  background-color: rgba(18, 18, 24, 0.6); /* Softer background */
+  width: 100%;
+  max-width: 350px; /* Smaller for better proportions */
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.robot-illustration:hover {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+  border-color: rgba(93, 155, 255, 0.3);
+}
+
+.robot-illustration::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(93, 155, 255, 0.05) 0%, transparent 70%);
+  animation: rotate 15s linear infinite;
+  pointer-events: none;
+}
+
+.robot-illustration span {
+  color: #ffffff; /* Pure white text */
+  font-size: 1.1rem; /* Smaller for better proportions */
+  text-align: center;
+  padding: 15px;
+  z-index: 2;
+}
+
+/* Robot animation for visual interest without distraction */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Decorative elements for background - Subtle and non-distracting */
+.decorative-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(93, 155, 255, 0.08) 0%, transparent 70%);
+  animation: floatAndFade 20s infinite ease-in-out;
+  z-index: 1;
+  pointer-events: none; /* Ensure they don't interfere with text selection */
+}
+
+.circle-1 {
+  width: 300px;
+  height: 300px;
+  top: 10%;
+  left: 5%;
+  animation-delay: 0s;
+}
+
+.circle-2 {
+  width: 400px;
+  height: 400px;
+  bottom: 15%;
+  right: 10%;
+  animation-delay: 5s;
+}
+
+.circle-3 {
+  width: 200px;
+  height: 200px;
+  top: 50%;
+  left: 45%;
+  animation-delay: 10s;
+}
+
+@keyframes floatAndFade {
+  0% { transform: translateY(0) scale(1); opacity: 0.05; }
+  50% { transform: translateY(-20px) scale(1.05); opacity: 0.08; }
+  100% { transform: translateY(0) scale(1); opacity: 0.05; }
+}
+
+/* Enhanced robot visual styling with cool, restrained tones */
+.robot-visual {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.robot-visual::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(45, 70, 120, 0.1) 0%, rgba(30, 50, 90, 0.15) 100%);
+  border-radius: 16px;
+  z-index: 1;
+}
+
+.robot-visual-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.robot-icon {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(93, 155, 255, 0.1) 0%, rgba(70, 120, 200, 0.1) 100%);
+  border-radius: 50%;
+  border: 1px solid rgba(93, 155, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.robot-icon svg {
+  width: 60px;
+  height: 60px;
+  fill: rgba(93, 155, 255, 0.7);
+}
+
+.robot-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #ffffff; /* Pure white */
+  margin-bottom: 8px;
+}
+
+.robot-description {
+  font-size: 0.9rem;
+  color: #ffffff; /* Pure white */
+  line-height: 1.4;
+}
+
+/* Subtle animation for robot visuals - non-distracting */
+.robot-pulse {
+  animation: robotPulse 4s ease-in-out infinite;
+}
+
+@keyframes robotPulse {
+  0% { box-shadow: 0 0 0 0 rgba(93, 155, 255, 0.1); }
+  50% { box-shadow: 0 0 0 10px rgba(93, 155, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(93, 155, 255, 0); }
+}
+
+/* Animation for the background gradient */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Long-read readability improvements - Professional book-style typography */
+.markdown-body {
+  --ifm-h1-font-size: 2.5rem;
+  --ifm-h2-font-size: 2rem;
+  --ifm-h3-font-size: 1.75rem;
+  --ifm-h4-font-size: 1.5rem;
+  --ifm-paragraph-font-size: 1.15rem; /* Slightly larger for better readability */
+  --ifm-line-height-base: 1.85; /* Increased line height for better readability */
+  --ifm-paragraph-spacing: 1.8rem; /* More space between paragraphs */
+  --ifm-heading-margin-bottom: 1.5rem; /* More space under headings */
+  --ifm-heading-margin-top: 2.8rem; /* More space above headings */
+}
+
+/* Heading styles for better hierarchy - Clean contrast with body text */
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  color: #ffffff; /* Clean white for headings */
+  font-weight: 600;
+  line-height: 1.3;
+  margin-top: var(--ifm-heading-margin-top);
+  margin-bottom: var(--ifm-heading-margin-bottom);
+  letter-spacing: -0.1px; /* Slightly less negative letter spacing */
+  font-family: 'Georgia', 'Times New Roman', serif; /* Classic book font for headings */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.markdown-body h1 {
+  font-size: var(--ifm-h1-font-size);
+  color: #ffffff;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-weight: 700; /* Bolder for main headings */
+  border-bottom: 3px solid rgba(93, 155, 255, 0.4); /* Subtle bottom border */
+  padding-bottom: 0.5rem;
+}
+
+.markdown-body h2 {
+  font-size: var(--ifm-h2-font-size);
+  margin-top: 3.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  position: relative;
+}
+
+.markdown-body h2::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 50px;
+  height: 2px;
+  background: linear-gradient(to right, #5d9bff, transparent);
+}
+
+.markdown-body h3 {
+  font-size: var(--ifm-h3-font-size);
+  margin-top: 2.8rem;
+  margin-bottom: 1.2rem;
+  font-weight: 600;
+  color: #f0f0f8; /* Slightly softer than h1/h2 */
+}
+
+.markdown-body h4 {
+  font-size: var(--ifm-h4-font-size);
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #e8e8f0; /* Even softer */
+}
+
+.markdown-body h5 {
+  font-size: 1.25rem;
+  margin-top: 2.2rem;
+  margin-bottom: 0.8rem;
+  font-weight: 500;
+  color: #e0e0ec; /* Softer still */
+}
+
+.markdown-body h6 {
+  font-size: 1.1rem;
+  margin-top: 2rem;
+  margin-bottom: 0.6rem;
+  font-weight: 500;
+  color: #d8d8e8; /* Softest heading color */
+}
+
+/* Paragraph and text improvements - Soft white text with enhanced book styling */
+.markdown-body p {
+  font-size: var(--ifm-paragraph-font-size);
+  line-height: 1.9; /* Increased line height for better readability */
+  color: #e8e8f0; /* Soft white text for comfortable reading */
+  margin-bottom: calc(var(--ifm-paragraph-spacing) * 1.2); /* Slightly more space */
+  letter-spacing: 0.3px; /* Slightly more letter spacing for readability */
+  font-weight: 400; /* Slightly heavier for better readability */
+  max-width: 800px; /* Optimal line length for readability */
+  font-family: 'Georgia', 'Times New Roman', serif; /* Classic book font */
+  hyphens: auto; /* Better text wrapping */
+}
+
+.markdown-body p + p {
+  margin-top: calc(var(--ifm-paragraph-spacing) * 0.8); /* Space between paragraphs */
+  text-indent: 1.5em; /* Classic book-style paragraph indentation */
+}
+
+/* Enhanced paragraph styling for better flow */
+.markdown-body p:first-child {
+  text-indent: 0; /* No indent for first paragraph */
+}
+
+/* Enhanced readability for long-form content */
+.markdown-body {
+  font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1; /* Enable font features */
+  -webkit-font-smoothing: antialiased; /* Better font rendering */
+  -moz-osx-font-smoothing: grayscale; /* Better font rendering */
+  text-rendering: optimizeLegibility; /* Better text rendering */
+}
+
+/* Enhanced link styling for better visibility */
+.markdown-body a {
+  color: #6cb0ff; /* Brighter blue links */
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+  font-weight: 500; /* Slightly bolder for better visibility */
+  transition: color 0.2s ease;
+}
+
+.markdown-body a:hover {
+  color: #8fc8ff; /* Lighter blue on hover */
+  text-decoration-thickness: 2px;
+}
+
+/* Enhanced list styling for better readability */
+.markdown-body ul,
+.markdown-body ol {
+  margin: 1.8rem 0;
+  padding-left: 1.8rem;
+  line-height: 1.75; /* Better line height for lists */
+}
+
+.markdown-body li {
+  margin-bottom: 0.8rem;
+  line-height: 1.75;
+  color: #e8e8f0; /* Soft white text for list items */
+  padding-left: 0.3rem; /* Add space for better visual separation */
+}
+
+.markdown-body li > p {
+  margin-bottom: 0.6rem;
+  line-height: var(--ifm-line-height-base);
+}
+
+/* Enhanced list item markers */
+.markdown-body ul {
+  list-style-type: disc;
+}
+
+.markdown-body ol {
+  list-style-type: decimal;
+}
+
+.markdown-body ul ul,
+.markdown-body ol ul {
+  list-style-type: circle;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-latin;
+}
+
+/* Enhanced blockquote styling - Book style with softer appearance */
+.markdown-body blockquote {
+  border-left: 4px solid #5d9bff; /* Thicker, brighter border */
+  background-color: rgba(93, 155, 255, 0.05); /* Softer, more subtle background */
+  padding: 1.5rem 1.8rem;
+  margin: 2rem 0;
+  color: #d0d0e0; /* Soft white text for quotes */
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Georgia', 'Times New Roman', serif; /* Book-style font */
+  border-top: 1px solid rgba(93, 155, 255, 0.1);
+  border-bottom: 1px solid rgba(93, 155, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.markdown-body blockquote::before {
+  content: '"';
+  font-size: 3rem;
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  color: rgba(93, 155, 255, 0.15);
+  font-family: serif;
+  line-height: 1;
+}
+
+/* Enhanced table styling - Book style */
+.markdown-body table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  margin: 1.8rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: rgba(18, 18, 24, 0.8);
+  border: 1px solid rgba(93, 155, 255, 0.2);
+  font-family: 'Georgia', 'Times New Roman', serif; /* Book-style font */
+}
+
+.markdown-body th {
+  background-color: rgba(93, 155, 255, 0.15);
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.9rem 1.1rem;
+  text-align: left;
+  border-bottom: 2px solid rgba(93, 155, 255, 0.3);
+  font-family: 'Georgia', 'Times New Roman', serif; /* Book-style font */
+}
+
+.markdown-body td {
+  padding: 0.9rem 1.1rem;
+  border-bottom: 1px solid rgba(93, 155, 255, 0.1);
+  color: #ffffff;
+  vertical-align: top;
+  font-family: 'Georgia', 'Times New Roman', serif; /* Book-style font */
+}
+
+.markdown-body tr:last-child td {
+  border-bottom: none;
+}
+
+.markdown-body tr:nth-child(even) {
+  background-color: rgba(18, 18, 24, 0.6); /* Subtle alternating rows */
+}
+
+.markdown-body tr:hover {
+  background-color: rgba(93, 155, 255, 0.05); /* Subtle hover effect */
+}
+
+/* Enhanced emphasis and strong text */
+.markdown-body strong {
+  color: #f0f0f8; /* Soft white for strong text */
+  font-weight: 600;
+}
+
+.markdown-body em {
+  color: #d0d0e0; /* Soft white for emphasis */
+  font-style: italic;
+}
+
+.markdown-body strong em {
+  color: #f0f0f8; /* Soft white for strong emphasis */
+}
+
+/* Enhanced code block styling - Softer for dark mode */
+.prism-code {
+  background-color: #161620 !important; /* Softer dark background */
+  border-radius: 8px;
+  padding: 1.6rem !important;
+  font-size: 0.95rem; /* Slightly larger for better readability */
+  line-height: 1.7; /* Better line height for code */
+  margin: 2rem 0;
+  overflow-x: auto;
+  border: 1px solid rgba(93, 155, 255, 0.2); /* Softer border */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  font-family: 'Courier New', 'Monaco', 'Consolas', monospace;
+}
+
+/* Enhanced inline code styling - Softer for dark mode */
+.markdown-body code {
+  background-color: rgba(45, 45, 65, 0.3); /* Softer, more subtle background */
+  color: #d0d0e0; /* Soft white code text */
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  border: 1px solid rgba(93, 155, 255, 0.15); /* Softer border */
+  font-weight: 500; /* Slightly bolder */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Enhanced preformatted text styling - Softer for dark mode */
+.markdown-body pre {
+  background-color: #161620 !important; /* Softer dark background */
+  border-radius: 8px;
+  padding: 1.6rem;
+  border: 1px solid rgba(93, 155, 255, 0.2); /* Softer border */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  margin: 2rem 0;
+  overflow-x: auto;
+}
+
+/* Enhanced horizontal rule styling */
+.markdown-body hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(93, 155, 255, 0.3), transparent);
+  margin: 2rem 0;
+}
+
+/* Enhanced image styling */
+.markdown-body img {
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  max-width: 100%;
+  height: auto;
+  margin: 1rem 0;
+}
+
+/* Enhanced figure and figcaption styling */
+.markdown-body figure {
+  margin: 1.8rem 0;
+  text-align: center;
+}
+
+.markdown-body figcaption {
+  color: #d0d0e0; /* Soft white caption text */
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  line-height: 1.5;
+  font-family: 'Georgia', 'Times New Roman', serif; /* Book-style font */
+}
+
+/* Enhanced book-style content container with soft background */
+.container {
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+  max-width: 1000px; /* Optimal width for book-style reading */
+  margin: 0 auto;
+  background-color: #1a1a24; /* Soft dark background */
+  border-radius: 12px;
+  padding: 3rem 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(93, 155, 255, 0.1);
+}
+
+/* Enhanced markdown content area styling */
+.main-wrapper {
+  background-color: #1a1a24; /* Consistent soft dark background */
+  min-height: 100vh;
+  padding: 2rem 0;
+}
+
+/* Enhanced content area for better reading experience */
+.content {
+  background-color: #1a1a24; /* Soft dark background */
+  padding: 2rem;
+  border-radius: 10px;
+  margin: 1rem 0;
+}
+
+/* Enhanced documentation sidebar improvements - Book style */
+.menu {
+  --ifm-menu-color: #ffffff; /* Pure white menu text */
+  --ifm-menu-color-active: #7ab8ff; /* Brighter active color */
+  --ifm-menu-color-hover: #8fc8ff; /* Brighter hover color */
+  --ifm-menu-link-sublist-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+}
+
+.menu__list-item-collapsible:hover,
+.menu__list-item:hover > .menu__link {
+  background-color: rgba(93, 155, 255, 0.15); /* More visible hover */
+  color: #7ab8ff; /* Brighter hover color */
+}
+
+.menu__link {
+  color: #ffffff; /* Pure white default link color */
+  transition: color 0.2s ease, background-color 0.2s ease;
+  border-radius: 6px;
+  margin: 2px 0;
+  padding: 0.5rem 1rem;
+}
+
+.menu__link--active {
+  color: #7ab8ff; /* Brighter active color */
+  background-color: rgba(93, 155, 255, 0.1); /* Subtle background */
+  border-left: 3px solid #5d9bff; /* Book-style active indicator */
+}
+
+/* Enhanced card and content surface styling - Book style */
+.card {
+  background-color: #121218; /* Consistent with dark theme */
+  border: 1px solid rgba(45, 45, 64, 0.4); /* More visible border */
+  border-radius: 12px; /* More book-like rounded corners */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4); /* Enhanced book-style shadow */
+  transition: all 0.3s ease;
+  margin-bottom: 2rem;
+}
+
+.card:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5); /* Enhanced shadow on hover */
+  transform: translateY(-2px); /* Subtle lift effect */
+  border-color: rgba(93, 155, 255, 0.4); /* Subtle blue border on hover */
+}
+
+.card__header,
+.card__body,
+.card__footer {
+  padding: 1.8rem; /* Increased padding for book feel */
+}
+
+/* Enhanced book-style typography */
+.book-typography {
+  font-family: 'Georgia', 'Times New Roman', serif; /* Classic book font */
+  line-height: 1.7; /* Optimal line spacing for books */
+  letter-spacing: 0.2px; /* Optimal letter spacing */
+}
+
+/* Enhanced table of contents styling */
+.table-of-contents {
+  border-left: 3px solid #5d9bff;
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+}
+
+.table-of-contents__link {
+  color: #ffffff;
+  text-decoration: none;
+  display: block;
+  margin: 0.3rem 0;
+  padding: 0.3rem 0;
+  transition: color 0.2s ease;
+}
+
+.table-of-contents__link:hover {
+  color: #7ab8ff;
+}
+
+.table-of-contents__link--active {
+  color: #7ab8ff;
+  font-weight: 600;
+}
+
+/* Enhanced section styling */
+.section {
+  margin: 3rem 0;
+  padding: 2rem 0;
+}
+
+.section__header {
+  border-bottom: 2px solid rgba(93, 155, 255, 0.3);
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* Enhanced pagination styling */
+.pagination-nav {
+  margin: 3rem 0;
+  padding: 2rem 0;
+  border-top: 1px solid rgba(93, 155, 255, 0.2);
+  border-bottom: 1px solid rgba(93, 155, 255, 0.2);
+}
+
+.pagination-nav__link {
+  border-radius: 8px;
+  padding: 1rem;
+  transition: all 0.2s ease;
+}
+
+.pagination-nav__link:hover {
+  background-color: rgba(93, 155, 255, 0.1);
+  transform: translateY(-1px);
+}
+
+/* Enhanced footer improvements */
+.footer {
+  background-color: #0a0a0f; /* Consistent with main background */
+  border-top: 1px solid rgba(93, 155, 255, 0.15); /* More visible border */
+  color: #ffffff; /* Pure white text */
+}
+
+.footer__title {
+  color: #ffffff; /* Pure white for footer titles */
+  margin-bottom: 1rem;
+}
+
+.footer__link-item {
+  color: #ffffff; /* Pure white link color */
+  transition: color 0.2s ease;
+}
+
+.footer__link-item:hover {
+  color: #7ab8ff; /* Brighter blue on hover */
+}
+
+/* Enhanced alert and notice styling */
+.alert {
+  border-radius: 8px;
+  padding: 1.2rem 1.5rem;
+  margin: 1.5rem 0;
+  border-left-width: 4px;
+}
+
+.alert--primary {
+  background-color: rgba(93, 155, 255, 0.1);
+  border-left-color: #5d9bff;
+  color: #ffffff; /* Pure white text */
+}
+
+.alert--secondary {
+  background-color: rgba(184, 184, 200, 0.1);
+  border-left-color: #b8b8c8;
+  color: #ffffff; /* Pure white text */
+}
+
+.alert--success {
+  background-color: rgba(107, 207, 127, 0.1);
+  border-left-color: #6bcf7f;
+  color: #ffffff; /* Pure white text */
+}
+
+.alert--info {
+  background-color: rgba(108, 176, 255, 0.1);
+  border-left-color: #6cb0ff;
+  color: #ffffff; /* Pure white text */
+}
+
+.alert--warning {
+  background-color: rgba(255, 217, 102, 0.1);
+  border-left-color: #ffd966;
+  color: #ffffff; /* Pure white text */
+}
+
+.alert--danger {
+  background-color: rgba(255, 107, 107, 0.1);
+  border-left-color: #ff6b6b;
+  color: #ffffff; /* Pure white text */
+}
+
+/* Enhanced search and navigation */
+.navbar {
+  background-color: #0a0a0f; /* Consistent with dark theme */
+  border-bottom: 1px solid rgba(93, 155, 255, 0.1); /* Subtle border */
+}
+
+.navbar__item,
+.navbar__link {
+  color: #ffffff; /* Pure white text */
+}
+
+.navbar__link:hover {
+  color: #7ab8ff; /* Bright blue on hover */
+}
+
+/* Enhanced mobile typography improvements */
+@media (max-width: 996px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text-content {
+    max-width: 100%;
+    margin-bottom: 3rem;
+  }
+
+  .hero-title {
+    font-size: 2.8rem; /* Slightly smaller but still readable */
+  }
+
+  .hero-subtitle {
+    font-size: 1.3rem; /* Slightly larger for mobile */
+    line-height: 1.6;
+  }
+
+  .hero-illustration {
+    max-width: 80%;
+  }
+
+  .circle-3 {
+    display: none; /* Hide smaller circle on mobile */
+  }
+
+  /* Mobile typography improvements */
+  .markdown-body {
+    --ifm-h1-font-size: 2.2rem;
+    --ifm-h2-font-size: 1.8rem;
+    --ifm-h3-font-size: 1.5rem;
+    --ifm-paragraph-font-size: 1.1rem; /* Slightly larger for mobile */
+    --ifm-line-height-base: 1.75; /* Better line height for mobile */
+    padding: 0 1rem; /* Add side padding */
+  }
+
+  /* Mobile code block improvements */
+  .prism-code {
+    padding: 1.2rem !important;
+    font-size: 0.85rem; /* Smaller font for mobile */
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .markdown-body {
+    --ifm-h1-font-size: 1.8rem;
+    --ifm-h2-font-size: 1.5rem;
+    --ifm-h3-font-size: 1.3rem;
+    --ifm-paragraph-font-size: 1rem;
+  }
+}
+
+/* Print styles for better documentation printing */
+@media print {
+  [data-theme='dark'] {
+    --ifm-background-color: #ffffff;
+    --ifm-background-surface-color: #ffffff;
+    --ifm-text-color: #000000;
+    --ifm-text-color-secondary: #333333;
+    --ifm-heading-color: #000000;
+  }
+
+  .footer,
+  .navbar {
+    display: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  [data-theme='dark'] {
+    --ifm-background-color: #000000;
+    --ifm-text-color: #ffffff;
+    --ifm-text-color-secondary: #ffffff;
+    --ifm-heading-color: #ffffff;
+  }
+}
+
+/* Final comprehensive dark mode readability enhancements */
+[data-theme='dark'] {
+  /* Ensure all text elements maintain high contrast */
+  --ifm-color-emphasis-0: rgba(255, 255, 255, 1); /* Pure white emphasis */
+  --ifm-color-emphasis-100: rgba(232, 232, 240, 0.9); /* Bright primary text */
+  --ifm-color-emphasis-200: rgba(184, 184, 200, 0.8); /* Secondary text */
+  --ifm-color-emphasis-300: rgba(148, 148, 168, 0.7); /* Muted text */
+  --ifm-color-emphasis-400: rgba(122, 122, 138, 0.6); /* Disabled text */
+  --ifm-color-emphasis-500: rgba(90, 90, 106, 0.5); /* Very muted text */
+  --ifm-color-emphasis-600: rgba(68, 68, 80, 0.4); /* Very faint text */
+  --ifm-color-emphasis-700: rgba(46, 46, 58, 0.3); /* Faint text */
+  --ifm-color-emphasis-800: rgba(24, 24, 32, 0.2); /* Very faint text */
+  --ifm-color-emphasis-900: rgba(12, 12, 16, 0.1); /* Barely visible text */
+  --ifm-color-emphasis-1000: rgba(0, 0, 0, 0.05); /* Almost invisible */
+
+  /* Ensure consistent border visibility */
+  --ifm-toc-border-color: rgba(93, 155, 255, 0.3);
+  --ifm-menu-border-color: rgba(93, 155, 255, 0.2);
+  --ifm-code-border-color: rgba(93, 155, 255, 0.25);
+
+  /* Ensure all interactive elements are clearly visible */
+  --ifm-button-background-color: #1a1a26;
+  --ifm-button-border-color: #3a3a50;
+  --ifm-button-color: #e8e8f0;
+  --ifm-button-background-color--hover: #252535;
+  --ifm-button-border-color--hover: #4a4a60;
+  --ifm-button-color--hover: #ffffff;
+
+  /* Ensure all code highlighting maintains readability */
+  --docusaurus-highlighted-code-line-bg: rgba(140, 140, 180, 0.25);
+}
+
+/* Final accessibility enhancements */
+[data-theme='dark'] .DocSearch-Button {
+  background-color: rgba(18, 18, 24, 0.8);
+  border: 1px solid rgba(93, 155, 255, 0.3);
+  color: #e8e8f0;
+}
+
+[data-theme='dark'] .DocSearch-Button:hover {
+  background-color: rgba(25, 25, 35, 0.9);
+  border-color: rgba(93, 155, 255, 0.5);
+  color: #7ab8ff;
+}
+
+/* Ensure all form elements maintain readability */
+[data-theme='dark'] input,
+[data-theme='dark'] textarea,
+[data-theme='dark'] select {
+  background-color: #121218;
+  border: 1px solid rgba(93, 155, 255, 0.3);
+  color: #e8e8f0;
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+}
+
+[data-theme='dark'] input:focus,
+[data-theme='dark'] textarea:focus,
+[data-theme='dark'] select:focus {
+  outline: none;
+  border-color: #5d9bff;
+  box-shadow: 0 0 0 2px rgba(93, 155, 255, 0.3);
+}
+
+/* Final verification that all elements maintain proper contrast */
+[data-theme='dark'] * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure no elements become invisible or too faint */
+[data-theme='dark'] .theme-edit-this-page,
+[data-theme='dark'] .theme-back-to-top-button,
+[data-theme='dark'] .pagination-nav__link {
+  color: #ffffff; /* Pure white text */
+}
+
+[data-theme='dark'] .theme-edit-this-page:hover,
+[data-theme='dark'] .theme-back-to-top-button:hover,
+[data-theme='dark'] .pagination-nav__link:hover {
+  color: #7ab8ff;
+}
+
+/* Additional book-style enhancements */
+.book-page {
+  background: linear-gradient(to bottom, #0a0a0f 0%, #121218 100%);
+  min-height: 100vh;
+}
+
+.book-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: rgba(18, 18, 24, 0.9);
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+.book-chapter {
+  margin: 2rem 0;
+  padding: 2rem 0;
+  border-bottom: 1px solid rgba(93, 155, 255, 0.1);
+}
+
+.book-chapter:last-child {
+  border-bottom: none;
+}
+
+.book-section {
+  margin: 1.5rem 0;
+  padding: 1rem 0;
+}
+
+.book-intro {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid rgba(93, 155, 255, 0.2);
+}
+
+.book-intro h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.book-intro p {
+  font-size: 1.2rem;
+  color: #ffffff;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+
+
+/* Enhanced code styling for book appearance */
+.prism-code {
+  font-family: 'Courier New', 'Monaco', 'Consolas', monospace;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  border-radius: 8px;
+  border: 1px solid rgba(93, 155, 255, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Ensure consistent book styling across all elements */
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6,
+.markdown-body p,
+.markdown-body li,
+.markdown-body blockquote,
+.markdown-body th,
+.markdown-body td {
+  font-family: 'Georgia', 'Times New Roman', serif !important; /* Ensure book-style font */
+}
+
+/* Initialize counters for book chapters and sections */
+.book-page {
+  counter-reset: chapter;
+}
+
+/* Enhanced book chapter styling */
+.book-chapter {
+  counter-increment: chapter;
+  position: relative;
+  margin-top: 3rem;
+}
+
+.book-chapter::before {
+  content: "Chapter " counter(chapter);
+  display: block;
+  font-size: 1.2rem;
+  color: rgba(93, 155, 255, 0.7);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(93, 155, 255, 0.2);
+}
+
+/* Enhanced section numbering */
+.book-section {
+  counter-reset: section;
+  margin-top: 2rem;
+}
+
+.book-section h2,
+.book-section h3,
+.book-section h4 {
+  position: relative;
+  padding-left: 3rem;
+}
+
+.book-section h2::before,
+.book-section h3::before,
+.book-section h4::before {
+  content: counter(chapter) "." counter(section);
+  counter-increment: section;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 0.9rem;
+  color: rgba(93, 155, 255, 0.6);
+  font-weight: 600;
+  background-color: rgba(93, 155, 255, 0.1);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  margin-right: 0.5rem;
+}
+
+/* Additional reading enhancements for book-like experience */
+[data-theme='dark'] {
+  /* Softer overall appearance while maintaining readability */
+  --ifm-font-color-base: #e8e8f0;
+  --ifm-font-family-base: 'Georgia', 'Times New Roman', serif;
+}
+
+/* Enhanced content wrapper for better focus */
+.doc-wrapper,
+.blog-wrapper,
+.pages-wrapper {
+  background-color: #1a1a24; /* Consistent soft dark background */
+  min-height: 100vh;
+  padding: 2rem 1rem;
+}
+
+/* Enhanced content area styling */
+.doc-content,
+.blog-content,
+.markdown-content {
+  background-color: #1a1a24; /* Soft dark background */
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(93, 155, 255, 0.1);
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+/* Softer list styling */
+.markdown-body ul,
+.markdown-body ol {
+  color: #e8e8f0; /* Soft white text */
+  padding-left: 1.8rem;
+  margin: 1.8rem 0;
+  line-height: 1.8; /* Better line height for lists */
+}
+
+.markdown-body li {
+  margin-bottom: 0.6rem;
+  color: #e8e8f0; /* Soft white text */
+}
+
+/* Enhanced emphasis styling */
+.markdown-body strong {
+  color: #f0f0f8; /* Slightly brighter for emphasis */
+  font-weight: 600;
+}
+
+.markdown-body em {
+  color: #d8d8e8; /* Softer for emphasis */
+  font-style: italic;
+}
+
+/* Enhanced link styling for better visibility */
+.markdown-body a {
+  color: #7ab8ff; /* Brighter blue links */
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+}
+
+.markdown-body a:hover {
+  color: #9dc5ff; /* Lighter blue on hover */
+  text-decoration-thickness: 2px;
+}
+
+/* Professional, mature dark mode end */
+
