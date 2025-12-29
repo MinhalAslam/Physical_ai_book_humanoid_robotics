@@ -1,0 +1,8 @@
+{
+  "label": "Physical AI & Humanoid Robotics Book",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Complete guide to building autonomous humanoid robots with Physical AI"
+  }
+}
