@@ -34,6 +34,7 @@ This command generates static content into the `build` directory and can be serv
 ## Deployment
 
 This site is configured for deployment to Vercel. The `vercel.json` file contains the necessary configuration for static build.
+Note: Python-related files were removed to ensure proper Node.js-only deployment to Vercel.
 
 ## Copyright
 

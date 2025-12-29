@@ -14,34 +14,70 @@
   --ifm-color-primary-lighter: #80c0ff;
   --ifm-color-primary-lightest: #cce6ff;
 
-  --ifm-background-color: #ffffff; /* Light mode background - white */
-  --ifm-background-surface-color: #f8f8f8; /* Light mode surface */
-  --ifm-text-color: #000000; /* Light mode text - pure black */
-  --ifm-text-color-secondary: #333333; /* Light mode secondary text */
-  --ifm-text-color-emphasis: #000000; /* Light mode emphasis - black */
+  /* Backgrounds - Slightly lightened with gentle gradient to prevent pure white */
+  --ifm-background-color: #f8f8f8; /* Light gray background - prevents pure white */
+  --ifm-background-surface-color: #f0f0f0; /* Light surface */
+  --ifm-text-color: #80c0ff; /* Same as link color for consistency */
+  --ifm-text-color-secondary: #80c0ff; /* Same as link color for consistency */
+  --ifm-text-color-emphasis: #80c0ff; /* Same as link color for consistency */
 
-  --ifm-border-color: #dddddd; /* Light mode borders */
+  --ifm-border-color: #d0d0d0; /* Subtle borders */
 
-  /* Heading colors */
-  --ifm-heading-color: #000000; /* Light mode headings - pure black */
-  --ifm-heading-color-secondary: #333333; /* Light mode secondary headings */
+  /* Heading colors - Same as link color for consistency */
+  --ifm-heading-color: #80c0ff; /* Same as link color for consistency */
+  --ifm-heading-color-secondary: #80c0ff; /* Same as link color for consistency */
 
   /* Code and syntax highlighting */
-  --ifm-code-background: rgba(245, 245, 245, 0.6); /* Light code bg */
-  --ifm-code-color: #000000; /* Light code text - black */
-  --docusaurus-highlighted-code-line-bg: rgba(200, 200, 200, 0.3); /* Light highlight */
+  --ifm-code-background: rgba(220, 220, 220, 0.6); /* Lighter code background for contrast */
+  --ifm-code-color: #f0f0f0; /* Soft off-white code text */
+  --docusaurus-highlighted-code-line-bg: rgba(180, 180, 180, 0.4); /* Lighter highlight */
 
   /* Link colors */
-  --ifm-link-color: #1a66cc; /* Professional blue links */
-  --ifm-link-hover-color: #0055aa; /* Darker blue on hover */
+  --ifm-link-color: #80c0ff; /* Lighter blue links for contrast */
+  --ifm-link-hover-color: #a0d0ff; /* Lighter blue on hover */
 
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+  /* Additional light mode variables */
+  --ifm-background-surface-color-overlay: rgba(240, 240, 240, 0.9); /* Overlay surfaces */
+  --ifm-background-elevation: #e8e8e8; /* For elevated elements */
+  --ifm-text-color-inverse: #f8f8f8; /* Inverse text color */
+  --ifm-text-color-muted: #b0b0b0; /* Muted gray for secondary text */
+  --ifm-text-color-disabled: #c0c0c0; /* Disabled text */
+  --ifm-border-color-light: #f0f0f0; /* Lighter borders */
+  --ifm-border-color-heavy: #d0d0d0; /* Heavier borders */
+  --ifm-toc-border-color: #e0e0e0; /* Table of contents borders */
+  --ifm-heading-color-accent: #2a6ac8; /* Accent headings */
+
+  /* Button and interactive colors */
+  --ifm-button-background-color: #d0d0d0;
+  --ifm-button-border-color: #b0b0b0;
+  --ifm-button-color: #f0f0f0; /* Soft off-white button text */
+  --ifm-button-background-color--hover: #c0c0c0;
+  --ifm-button-border-color--hover: #a0a0a0;
+
+  /* Preformatted text */
+  --ifm-pre-background: #e0e0e0; /* Lighter preformatted background */
+  --ifm-pre-color: #f0f0f0; /* Soft off-white preformatted text */
+  --ifm-pre-border-color: #c0c0c0; /* Preformatted border */
+
+  /* Success, warning, danger colors */
+  --ifm-color-success: #a0e0a0; /* Lighter green for contrast */
+  --ifm-color-info: #80c0ff; /* Lighter blue */
+  --ifm-color-warning: #ffd97a; /* Lighter yellow-orange */
+  --ifm-color-danger: #ff9a9a; /* Lighter red */
+
+  /* Shadow and elevation */
+  --ifm-global-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --ifm-global-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+  --ifm-global-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.15);
+  --ifm-global-shadow-xl: 0 12px 48px rgba(0, 0, 0, 0.18);
 }
 
-/* Dark mode with softer text on dark backgrounds for book reading */
+/* Dark mode with high-contrast light text on dark backgrounds for maximum visibility */
 [data-theme='dark'] {
-  /* Global dark mode color system - Soft, readable text on dark backgrounds */
+  /* Global dark mode color system - Bright, visible text on dark backgrounds */
   --ifm-color-primary: #5d9bff; /* Bright professional blue */
   --ifm-color-primary-dark: #3a85ff;
   --ifm-color-primary-darker: #2a7aff;
@@ -50,63 +86,63 @@
   --ifm-color-primary-lighter: #8dc4ff;
   --ifm-color-primary-lightest: #bfe2ff;
 
-  /* Backgrounds - Soft dark for eye comfort */
-  --ifm-background-color: #1a1a24; /* Soft dark background */
-  --ifm-background-surface-color: #1a1a24; /* Consistent soft dark surface */
-  --ifm-background-surface-color-overlay: rgba(26, 26, 36, 0.8); /* Overlay surfaces */
-  --ifm-background-elevation: #161620; /* For elevated elements */
+  /* Backgrounds - Very dark for high contrast */
+  --ifm-background-color: #000000; /* Pure black background for maximum contrast */
+  --ifm-background-surface-color: #111111; /* Very dark surface */
+  --ifm-background-surface-color-overlay: rgba(17, 17, 17, 0.9); /* Overlay surfaces */
+  --ifm-background-elevation: #080808; /* For elevated elements */
 
-  /* Text colors - Soft white for comfortable reading */
-  --ifm-text-color: #e8e8f0; /* Soft white for primary text - easier on eyes */
-  --ifm-text-color-secondary: #d0d0e0; /* Soft secondary text */
-  --ifm-text-color-inverse: #1a1a24; /* Inverse text color */
-  --ifm-text-color-emphasis: #f0f0f8; /* Emphasized text */
-  --ifm-text-color-muted: #b8b8c8; /* Muted text */
-  --ifm-text-color-disabled: #9494a8; /* Disabled text */
+  /* Text colors - Same as link color for consistency */
+  --ifm-text-color: #80c0ff; /* Same as link color for consistency */
+  --ifm-text-color-secondary: #80c0ff; /* Same as link color for consistency */
+  --ifm-text-color-inverse: #000000; /* Inverse text color */
+  --ifm-text-color-emphasis: #80c0ff; /* Same as link color for consistency */
+  --ifm-text-color-muted: #80c0ff; /* Same as link color for consistency */
+  --ifm-text-color-disabled: #80c0ff; /* Same as link color for consistency */
 
-  /* Heading colors - Bright but not harsh */
-  --ifm-heading-color: #ffffff; /* Clean white for headings */
-  --ifm-heading-color-secondary: #f0f0f8; /* Soft white for secondary headings */
-  --ifm-heading-color-accent: #a0c0ff; /* Accent headings */
+  /* Heading colors - Same as link color for consistency */
+  --ifm-heading-color: #80c0ff; /* Same as link color for consistency */
+  --ifm-heading-color-secondary: #80c0ff; /* Same as link color for consistency */
+  --ifm-heading-color-accent: #80c0ff; /* Same as link color for consistency */
 
   /* Border colors - Visible on dark backgrounds */
-  --ifm-border-color: #3a3a50; /* Standard borders */
-  --ifm-border-color-light: #2d2d40; /* Lighter borders */
-  --ifm-border-color-heavy: #4a4a60; /* Heavier borders */
-  --ifm-toc-border-color: #3a3a50; /* Table of contents borders */
+  --ifm-border-color: #444444; /* Bright visible borders */
+  --ifm-border-color-light: #333333; /* Lighter borders */
+  --ifm-border-color-heavy: #666666; /* Heavier borders */
+  --ifm-toc-border-color: #444444; /* Table of contents borders */
 
-  /* Link colors - Bright for visibility */
-  --ifm-link-color: #6cb0ff; /* Primary links - bright blue */
-  --ifm-link-hover-color: #8fc8ff; /* Hover links - lighter blue */
+  /* Link colors - Consistent lighter blue */
+  --ifm-link-color: #80c0ff; /* Lighter blue links for consistency */
+  --ifm-link-hover-color: #a0d0ff; /* Lighter blue on hover */
   --ifm-link-decoration: underline; /* Always visible links */
   --ifm-link-hover-decoration: underline; /* Consistent hover decoration */
 
   /* Button and interactive colors */
-  --ifm-button-background-color: #252535;
-  --ifm-button-border-color: #4a4a60;
-  --ifm-button-color: #e8e8f0; /* Soft white button text */
-  --ifm-button-background-color--hover: #303040;
-  --ifm-button-border-color--hover: #5a5a70;
+  --ifm-button-background-color: #222222;
+  --ifm-button-border-color: #555555;
+  --ifm-button-color: #ffffff; /* Pure white button text */
+  --ifm-button-background-color--hover: #333333;
+  --ifm-button-border-color--hover: #666666;
 
   /* Code and syntax highlighting - Readable on dark */
-  --ifm-code-background: rgba(45, 45, 65, 0.4); /* Softer code background */
-  --ifm-code-color: #d0d0e0; /* Soft white code text */
-  --ifm-pre-background: #161620; /* Dark preformatted background */
-  --ifm-pre-color: #e8e8f0; /* Soft white preformatted text */
-  --ifm-pre-border-color: #3a3a50; /* Preformatted border */
-  --docusaurus-highlighted-code-line-bg: rgba(90, 90, 140, 0.3); /* Softer highlight */
+  --ifm-code-background: rgba(30, 30, 30, 0.8); /* Dark code background */
+  --ifm-code-color: #ffffff; /* Pure white code text */
+  --ifm-pre-background: #080808; /* Very dark preformatted background */
+  --ifm-pre-color: #ffffff; /* Pure white preformatted text */
+  --ifm-pre-border-color: #444444; /* Preformatted border */
+  --docusaurus-highlighted-code-line-bg: rgba(100, 100, 100, 0.4); /* Visible highlight */
 
-  /* Success, warning, danger colors - Adjusted for dark mode */
-  --ifm-color-success: #6bcf7f; /* Bright green */
-  --ifm-color-info: #6cb0ff; /* Bright blue */
+  /* Success, warning, danger colors - Bright for visibility */
+  --ifm-color-success: #7ed38f; /* Bright green */
+  --ifm-color-info: #7ab8ff; /* Bright blue */
   --ifm-color-warning: #ffd966; /* Bright yellow */
   --ifm-color-danger: #ff6b6b; /* Bright red */
 
   /* Shadow and elevation - Subtle but effective */
-  --ifm-global-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-  --ifm-global-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
-  --ifm-global-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
-  --ifm-global-shadow-xl: 0 12px 48px rgba(0, 0, 0, 0.6);
+  --ifm-global-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  --ifm-global-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.7);
+  --ifm-global-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.8);
+  --ifm-global-shadow-xl: 0 12px 48px rgba(0, 0, 0, 0.9);
 
   /* Spacing and sizing - Maintained for readability */
   --ifm-global-spacing: 1rem;
@@ -118,13 +154,13 @@
   position: relative;
   overflow: hidden;
   padding: 6rem 0; /* Reduced padding for better book proportions */
-  background: linear-gradient(135deg, #0a0a0f 0%, #121218 50%, #0f0f16 100%); /* Refined dark gradient */
+  background: linear-gradient(135deg, #000000 0%, #080808 50%, #000000 100%); /* Pure black gradient for maximum contrast */
   color: #ffffff; /* Pure white text */
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 70vh; /* Reduced height for better proportions */
-  border-bottom: 2px solid rgba(93, 155, 255, 0.2); /* Stronger book-style border */
+  border-bottom: 2px solid rgba(93, 155, 255, 0.3); /* Stronger book-style border */
   font-family: 'Georgia', 'Times New Roman', serif; /* Book-style font */
 }
 
@@ -203,9 +239,9 @@
 }
 
 .robot-illustration {
-  border: 1px solid rgba(93, 155, 255, 0.2); /* Subtler border */
+  border: 1px solid rgba(93, 155, 255, 0.3); /* More visible border */
   border-radius: 12px; /* More book-style rounded */
-  background-color: rgba(18, 18, 24, 0.6); /* Softer background */
+  background-color: rgba(8, 8, 8, 0.8); /* Darker background for contrast */
   width: 100%;
   max-width: 350px; /* Smaller for better proportions */
   height: 250px;
@@ -213,7 +249,7 @@
   align-items: center;
   justify-content: center;
   backdrop-filter: blur(5px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
@@ -384,32 +420,32 @@
   --ifm-h3-font-size: 1.75rem;
   --ifm-h4-font-size: 1.5rem;
   --ifm-paragraph-font-size: 1.15rem; /* Slightly larger for better readability */
-  --ifm-line-height-base: 1.85; /* Increased line height for better readability */
-  --ifm-paragraph-spacing: 1.8rem; /* More space between paragraphs */
-  --ifm-heading-margin-bottom: 1.5rem; /* More space under headings */
-  --ifm-heading-margin-top: 2.8rem; /* More space above headings */
+  --ifm-line-height-base: 2.1; /* Increased line spacing for long reading */
+  --ifm-paragraph-spacing: 2.2rem; /* More space between paragraphs */
+  --ifm-heading-margin-bottom: 2rem; /* More space under headings */
+  --ifm-heading-margin-top: 3.2rem; /* More space above headings */
 }
 
-/* Heading styles for better hierarchy - Clean contrast with body text */
+/* Heading styles for better hierarchy - Enhanced with subtle glow and improved contrast */
 .markdown-body h1,
 .markdown-body h2,
 .markdown-body h3,
 .markdown-body h4,
 .markdown-body h5,
 .markdown-body h6 {
-  color: #ffffff; /* Clean white for headings */
-  font-weight: 600;
+  color: var(--ifm-heading-color); /* Use theme variable for proper light/dark mode */
+  font-weight: 700; /* Slightly bolder for better visibility */
   line-height: 1.3;
   margin-top: var(--ifm-heading-margin-top);
   margin-bottom: var(--ifm-heading-margin-bottom);
   letter-spacing: -0.1px; /* Slightly less negative letter spacing */
   font-family: 'Georgia', 'Times New Roman', serif; /* Classic book font for headings */
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), 0 0 10px rgba(128, 192, 255, 0.2); /* Subtle glow effect matching blue color */
 }
 
 .markdown-body h1 {
   font-size: var(--ifm-h1-font-size);
-  color: #ffffff;
+  color: var(--ifm-heading-color); /* Use theme variable for proper light/dark mode */
   margin-top: 0;
   margin-bottom: 2rem;
   font-weight: 700; /* Bolder for main headings */
@@ -467,14 +503,14 @@
   color: #d8d8e8; /* Softest heading color */
 }
 
-/* Paragraph and text improvements - Soft white text with enhanced book styling */
+/* Paragraph and text improvements - Enhanced text with improved book styling */
 .markdown-body p {
   font-size: var(--ifm-paragraph-font-size);
-  line-height: 1.9; /* Increased line height for better readability */
-  color: #e8e8f0; /* Soft white text for comfortable reading */
-  margin-bottom: calc(var(--ifm-paragraph-spacing) * 1.2); /* Slightly more space */
-  letter-spacing: 0.3px; /* Slightly more letter spacing for readability */
-  font-weight: 400; /* Slightly heavier for better readability */
+  line-height: var(--ifm-line-height-base); /* Use the defined line height for consistency */
+  color: #80c0ff; /* Lighter blue color as requested */
+  margin-bottom: var(--ifm-paragraph-spacing); /* Use defined spacing */
+  letter-spacing: 0.5px; /* Increased letter spacing for readability */
+  font-weight: 500; /* Increased font weight for better visibility */
   max-width: 800px; /* Optimal line length for readability */
   font-family: 'Georgia', 'Times New Roman', serif; /* Classic book font */
   hyphens: auto; /* Better text wrapping */
@@ -498,9 +534,9 @@
   text-rendering: optimizeLegibility; /* Better text rendering */
 }
 
-/* Enhanced link styling for better visibility */
+/* Enhanced link styling with gentle accent colors */
 .markdown-body a {
-  color: #6cb0ff; /* Brighter blue links */
+  color: #7aa0ff; /* Gentle blue links - visible but not harsh */
   text-decoration: underline;
   text-decoration-thickness: 1.5px;
   text-underline-offset: 3px;
@@ -509,7 +545,7 @@
 }
 
 .markdown-body a:hover {
-  color: #8fc8ff; /* Lighter blue on hover */
+  color: #9dc5ff; /* Gentle lighter blue on hover */
   text-decoration-thickness: 2px;
 }
 
@@ -524,7 +560,7 @@
 .markdown-body li {
   margin-bottom: 0.8rem;
   line-height: 1.75;
-  color: #e8e8f0; /* Soft white text for list items */
+  color: #80c0ff; /* Lighter blue color as requested */
   padding-left: 0.3rem; /* Add space for better visual separation */
 }
 
@@ -552,13 +588,13 @@
   list-style-type: lower-latin;
 }
 
-/* Enhanced blockquote styling - Book style with softer appearance */
+/* Enhanced blockquote styling - Book style with enhanced visibility */
 .markdown-body blockquote {
-  border-left: 4px solid #5d9bff; /* Thicker, brighter border */
+  border-left: 4px solid var(--ifm-color-primary); /* Thicker, primary color border */
   background-color: rgba(93, 155, 255, 0.05); /* Softer, more subtle background */
   padding: 1.5rem 1.8rem;
   margin: 2rem 0;
-  color: #d0d0e0; /* Soft white text for quotes */
+  color: #80c0ff; /* Lighter blue color as requested */
   border-radius: 0 8px 8px 0;
   font-style: italic;
   position: relative;
@@ -605,8 +641,8 @@
 
 .markdown-body td {
   padding: 0.9rem 1.1rem;
-  border-bottom: 1px solid rgba(93, 155, 255, 0.1);
-  color: #ffffff;
+  border-bottom: 1px solid var(--ifm-border-color);
+  color: #80c0ff; /* Lighter blue color as requested */
   vertical-align: top;
   font-family: 'Georgia', 'Times New Roman', serif; /* Book-style font */
 }
@@ -625,17 +661,17 @@
 
 /* Enhanced emphasis and strong text */
 .markdown-body strong {
-  color: #f0f0f8; /* Soft white for strong text */
-  font-weight: 600;
+  color: #ffffff; /* Pure white for strong text - high contrast against blue */
+  font-weight: 700; /* Bolder for better emphasis */
 }
 
 .markdown-body em {
-  color: #d0d0e0; /* Soft white for emphasis */
+  color: #e0e0e0; /* Lighter gray for emphasis - good contrast against blue */
   font-style: italic;
 }
 
 .markdown-body strong em {
-  color: #f0f0f8; /* Soft white for strong emphasis */
+  color: #ffffff; /* Pure white for strong emphasis - high contrast */
 }
 
 /* Enhanced code block styling - Softer for dark mode */
@@ -699,37 +735,37 @@
 }
 
 .markdown-body figcaption {
-  color: #d0d0e0; /* Soft white caption text */
+  color: #80c0ff; /* Lighter blue color as requested */
   font-size: 0.9rem;
   margin-top: 0.5rem;
   line-height: 1.5;
   font-family: 'Georgia', 'Times New Roman', serif; /* Book-style font */
 }
 
-/* Enhanced book-style content container with soft background */
+/* Enhanced book-style content container with high contrast */
 .container {
   padding-top: 2rem;
   padding-bottom: 3rem;
   max-width: 1000px; /* Optimal width for book-style reading */
   margin: 0 auto;
-  background-color: #1a1a24; /* Soft dark background */
+  background-color: #000000; /* Pure black background for maximum contrast */
   border-radius: 12px;
   padding: 3rem 2rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(93, 155, 255, 0.1);
+  border: 1px solid rgba(93, 155, 255, 0.2);
 }
 
 /* Enhanced markdown content area styling */
 .main-wrapper {
-  background-color: #1a1a24; /* Consistent soft dark background */
+  background-color: #000000; /* Pure black background for maximum contrast */
   min-height: 100vh;
   padding: 2rem 0;
 }
 
 /* Enhanced content area for better reading experience */
 .content {
-  background-color: #1a1a24; /* Soft dark background */
+  background-color: #000000; /* Pure black background for maximum contrast */
   padding: 2rem;
   border-radius: 10px;
   margin: 1rem 0;
@@ -746,11 +782,11 @@
 .menu__list-item-collapsible:hover,
 .menu__list-item:hover > .menu__link {
   background-color: rgba(93, 155, 255, 0.15); /* More visible hover */
-  color: #7ab8ff; /* Brighter hover color */
+  color: #a0d0ff; /* Lighter blue hover color */
 }
 
 .menu__link {
-  color: #ffffff; /* Pure white default link color */
+  color: #80c0ff; /* Lighter blue for consistency */
   transition: color 0.2s ease, background-color 0.2s ease;
   border-radius: 6px;
   margin: 2px 0;
@@ -758,17 +794,17 @@
 }
 
 .menu__link--active {
-  color: #7ab8ff; /* Brighter active color */
+  color: #a0d0ff; /* Lighter blue active color */
   background-color: rgba(93, 155, 255, 0.1); /* Subtle background */
   border-left: 3px solid #5d9bff; /* Book-style active indicator */
 }
 
 /* Enhanced card and content surface styling - Book style */
 .card {
-  background-color: #121218; /* Consistent with dark theme */
-  border: 1px solid rgba(45, 45, 64, 0.4); /* More visible border */
+  background-color: #080808; /* Darker background for better contrast */
+  border: 1px solid rgba(93, 155, 255, 0.3); /* More visible blue border */
   border-radius: 12px; /* More book-like rounded corners */
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4); /* Enhanced book-style shadow */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6); /* Enhanced book-style shadow */
   transition: all 0.3s ease;
   margin-bottom: 2rem;
 }
@@ -850,8 +886,8 @@
 
 /* Enhanced footer improvements */
 .footer {
-  background-color: #0a0a0f; /* Consistent with main background */
-  border-top: 1px solid rgba(93, 155, 255, 0.15); /* More visible border */
+  background-color: #000000; /* Pure black background for maximum contrast */
+  border-top: 1px solid rgba(93, 155, 255, 0.3); /* More visible border */
   color: #ffffff; /* Pure white text */
 }
 
@@ -861,12 +897,12 @@
 }
 
 .footer__link-item {
-  color: #ffffff; /* Pure white link color */
+  color: #80c0ff; /* Lighter blue for consistency */
   transition: color 0.2s ease;
 }
 
 .footer__link-item:hover {
-  color: #7ab8ff; /* Brighter blue on hover */
+  color: #a0d0ff; /* Lighter blue on hover */
 }
 
 /* Enhanced alert and notice styling */
@@ -915,17 +951,17 @@
 
 /* Enhanced search and navigation */
 .navbar {
-  background-color: #0a0a0f; /* Consistent with dark theme */
-  border-bottom: 1px solid rgba(93, 155, 255, 0.1); /* Subtle border */
+  background-color: #000000; /* Pure black background for maximum contrast */
+  border-bottom: 1px solid rgba(93, 155, 255, 0.2); /* More visible border */
 }
 
 .navbar__item,
 .navbar__link {
-  color: #ffffff; /* Pure white text */
+  color: #80c0ff; /* Lighter blue for consistency */
 }
 
 .navbar__link:hover {
-  color: #7ab8ff; /* Bright blue on hover */
+  color: #a0d0ff; /* Lighter blue on hover */
 }
 
 /* Enhanced mobile typography improvements */
@@ -1086,6 +1122,26 @@
 [data-theme='dark'] * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure all text content has sufficient contrast in dark mode */
+[data-theme='dark'] .markdown-body *,
+[data-theme='dark'] .container *,
+[data-theme='dark'] .content *,
+[data-theme='dark'] .doc-content *,
+[data-theme='dark'] .book-content * {
+  color: #f0f0f8 !important; /* Bright white as default for all content */
+}
+
+/* Specific overrides for elements that need different treatment */
+[data-theme='dark'] .markdown-body strong,
+[data-theme='dark'] .markdown-body h1,
+[data-theme='dark'] .markdown-body h2,
+[data-theme='dark'] .markdown-body h3,
+[data-theme='dark'] .markdown-body h4,
+[data-theme='dark'] .markdown-body h5,
+[data-theme='dark'] .markdown-body h6 {
+  color: #ffffff !important; /* Pure white for headings and strong text */
 }
 
 /* Ensure no elements become invisible or too faint */
@@ -1275,32 +1331,209 @@
 
 .markdown-body li {
   margin-bottom: 0.6rem;
-  color: #e8e8f0; /* Soft white text */
+  color: #80c0ff; /* Lighter blue color as requested */
 }
 
 /* Enhanced emphasis styling */
 .markdown-body strong {
-  color: #f0f0f8; /* Slightly brighter for emphasis */
-  font-weight: 600;
+  color: #ffffff; /* Pure white for strong text - high contrast against blue */
+  font-weight: 700; /* Bolder for better emphasis */
 }
 
 .markdown-body em {
-  color: #d8d8e8; /* Softer for emphasis */
+  color: #e0e0e0; /* Lighter gray for emphasis - good contrast against blue */
   font-style: italic;
 }
 
-/* Enhanced link styling for better visibility */
+/* Enhanced link styling with consistent lighter blue */
 .markdown-body a {
-  color: #7ab8ff; /* Brighter blue links */
+  color: #80c0ff; /* Lighter blue links for consistency */
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+  font-weight: 500; /* Slightly bolder for better visibility */
+  transition: color 0.2s ease;
+}
+
+.markdown-body a:hover {
+  color: #a0d0ff; /* Lighter blue on hover */
+  text-decoration-thickness: 2px;
+}
+
+/* Global link styling for consistency */
+a {
+  color: #80c0ff; /* Lighter blue links for consistency */
   text-decoration: underline;
   text-decoration-thickness: 1.5px;
   text-underline-offset: 3px;
   transition: color 0.2s ease;
 }
 
-.markdown-body a:hover {
-  color: #9dc5ff; /* Lighter blue on hover */
+a:hover {
+  color: #a0d0ff; /* Lighter blue on hover */
   text-decoration-thickness: 2px;
+}
+
+/* For the chapter links in lists, they already inherit link color which is #80c0ff */
+/* This ensures consistency with our previous updates */
+.markdown-body ul li,
+.markdown-body ol li {
+  color: #80c0ff; /* Same as heading/link color */
+}
+
+/* Specific styling for constitution principles and related text */
+/* These elements will already use the color #80c0ff since we updated all text colors */
+/* The list items and paragraphs in the constitution section */
+.markdown-body ul li {
+  color: #80c0ff; /* Same as heading color */
+}
+
+/* All H3 headings (which include the ACT headings) already use the heading color #80c0ff */
+/* This maintains consistency with our previous heading color updates */
+
+/* Ensure system dark mode preference uses the same high-contrast styling */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Apply the same high-contrast dark mode variables when system is in dark mode */
+    --ifm-background-color: #000000; /* Pure black background for maximum contrast */
+    --ifm-background-surface-color: #111111; /* Very dark surface */
+    --ifm-background-surface-color-overlay: rgba(17, 17, 17, 0.9); /* Overlay surfaces */
+    --ifm-background-elevation: #080808; /* For elevated elements */
+
+    /* Text colors - Same as link color for consistency */
+    --ifm-text-color: #80c0ff; /* Same as link color for consistency */
+    --ifm-text-color-secondary: #80c0ff; /* Same as link color for consistency */
+    --ifm-text-color-inverse: #000000; /* Inverse text color */
+    --ifm-text-color-emphasis: #80c0ff; /* Same as link color for consistency */
+    --ifm-text-color-muted: #80c0ff; /* Same as link color for consistency */
+    --ifm-text-color-disabled: #80c0ff; /* Same as link color for consistency */
+
+    /* Heading colors - Same as link color for consistency */
+    --ifm-heading-color: #80c0ff; /* Same as link color for consistency */
+    --ifm-heading-color-secondary: #80c0ff; /* Same as link color for consistency */
+    --ifm-heading-color-accent: #80c0ff; /* Same as link color for consistency */
+
+    /* Border colors - Visible on dark backgrounds */
+    --ifm-border-color: #444444; /* Bright visible borders */
+    --ifm-border-color-light: #333333; /* Lighter borders */
+    --ifm-border-color-heavy: #666666; /* Heavier borders */
+    --ifm-toc-border-color: #444444; /* Table of contents borders */
+
+    /* Link colors - Consistent lighter blue */
+    --ifm-link-color: #80c0ff; /* Lighter blue links for consistency */
+    --ifm-link-hover-color: #a0d0ff; /* Lighter blue on hover */
+    --ifm-link-decoration: underline; /* Always visible links */
+    --ifm-link-hover-decoration: underline; /* Consistent hover decoration */
+
+    /* Button and interactive colors */
+    --ifm-button-background-color: #222222;
+    --ifm-button-border-color: #555555;
+    --ifm-button-color: #ffffff; /* Pure white button text */
+    --ifm-button-background-color--hover: #333333;
+    --ifm-button-border-color--hover: #666666;
+
+    /* Code and syntax highlighting - Readable on dark */
+    --ifm-code-background: rgba(30, 30, 30, 0.8); /* Dark code background */
+    --ifm-code-color: #ffffff; /* Pure white code text */
+    --ifm-pre-background: #080808; /* Very dark preformatted background */
+    --ifm-pre-color: #ffffff; /* Pure white preformatted text */
+    --ifm-pre-border-color: #444444; /* Preformatted border */
+    --docusaurus-highlighted-code-line-bg: rgba(100, 100, 100, 0.4); /* Visible highlight */
+
+    /* Success, warning, danger colors - Bright for visibility */
+    --ifm-color-success: #7ed38f; /* Bright green */
+    --ifm-color-info: #7ab8ff; /* Bright blue */
+    --ifm-color-warning: #ffd966; /* Bright yellow */
+    --ifm-color-danger: #ff6b6b; /* Bright red */
+
+    /* Shadow and elevation - Subtle but effective */
+    --ifm-global-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+    --ifm-global-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.7);
+    --ifm-global-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.8);
+    --ifm-global-shadow-xl: 0 12px 48px rgba(0, 0, 0, 0.9);
+
+    /* Primary color - maintained */
+    --ifm-color-primary: #5d9bff;
+    --ifm-color-primary-dark: #3a85ff;
+    --ifm-color-primary-darker: #2a7aff;
+    --ifm-color-primary-darkest: #1a66cc;
+    --ifm-color-primary-light: #7ab8ff;
+    --ifm-color-primary-lighter: #8dc4ff;
+    --ifm-color-primary-lightest: #bfe2ff;
+  }
+}
+
+/* Ensure system light mode preference uses the optimized high-contrast styling */
+@media (prefers-color-scheme: light) {
+  :root {
+    /* Apply the optimized high-contrast light mode variables when system is in light mode */
+    /* Backgrounds - Slightly lightened to prevent pure white */
+    --ifm-background-color: #f8f8f8; /* Light gray background - prevents pure white */
+    --ifm-background-surface-color: #f0f0f0; /* Light surface */
+    --ifm-background-surface-color-overlay: rgba(240, 240, 240, 0.9); /* Overlay surfaces */
+    --ifm-background-elevation: #e8e8e8; /* For elevated elements */
+
+    /* Text colors - Same as link color for consistency */
+    --ifm-text-color: #80c0ff; /* Same as link color for consistency */
+    --ifm-text-color-secondary: #80c0ff; /* Same as link color for consistency */
+    --ifm-text-color-inverse: #f8f8f8; /* Inverse text color */
+    --ifm-text-color-emphasis: #80c0ff; /* Same as link color for consistency */
+    --ifm-text-color-muted: #80c0ff; /* Same as link color for consistency */
+    --ifm-text-color-disabled: #80c0ff; /* Same as link color for consistency */
+
+    /* Heading colors - Same as link color for consistency */
+    --ifm-heading-color: #80c0ff; /* Same as link color for consistency */
+    --ifm-heading-color-secondary: #80c0ff; /* Same as link color for consistency */
+    --ifm-heading-color-accent: #80c0ff; /* Same as link color for consistency */
+
+    /* Border colors */
+    --ifm-border-color: #d0d0d0; /* Subtle borders */
+    --ifm-border-color-light: #e0e0e0; /* Lighter borders */
+    --ifm-border-color-heavy: #c0c0c0; /* Heavier borders */
+    --ifm-toc-border-color: #d0d0d0; /* Table of contents borders */
+
+    /* Link colors */
+    --ifm-link-color: #80c0ff; /* Lighter blue links for contrast */
+    --ifm-link-hover-color: #a0d0ff; /* Lighter blue on hover */
+    --ifm-link-decoration: underline; /* Always visible links */
+    --ifm-link-hover-decoration: underline; /* Consistent hover decoration */
+
+    /* Button and interactive colors */
+    --ifm-button-background-color: #d0d0d0;
+    --ifm-button-border-color: #b0b0b0;
+    --ifm-button-color: #f0f0f0; /* Soft off-white button text */
+    --ifm-button-background-color--hover: #c0c0c0;
+    --ifm-button-border-color--hover: #a0a0a0;
+
+    /* Code and syntax highlighting */
+    --ifm-code-background: rgba(220, 220, 220, 0.6); /* Lighter code background for contrast */
+    --ifm-code-color: #f0f0f0; /* Soft off-white code text */
+    --ifm-pre-background: #e0e0e0; /* Lighter preformatted background */
+    --ifm-pre-color: #f0f0f0; /* Soft off-white preformatted text */
+    --ifm-pre-border-color: #c0c0c0; /* Preformatted border */
+    --docusaurus-highlighted-code-line-bg: rgba(180, 180, 180, 0.4); /* Lighter highlight */
+
+    /* Success, warning, danger colors */
+    --ifm-color-success: #a0e0a0; /* Lighter green for contrast */
+    --ifm-color-info: #80c0ff; /* Lighter blue */
+    --ifm-color-warning: #ffd97a; /* Lighter yellow-orange */
+    --ifm-color-danger: #ff9a9a; /* Lighter red */
+
+    /* Shadow and elevation */
+    --ifm-global-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --ifm-global-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.15);
+    --ifm-global-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.2);
+    --ifm-global-shadow-xl: 0 12px 48px rgba(0, 0, 0, 0.25);
+
+    /* Primary color - maintained */
+    --ifm-color-primary: #80c0ff;
+    --ifm-color-primary-dark: #60a0ff;
+    --ifm-color-primary-darker: #5090ff;
+    --ifm-color-primary-darkest: #4080ff;
+    --ifm-color-primary-light: #a0d0ff;
+    --ifm-color-primary-lighter: #b0d8ff;
+    --ifm-color-primary-lightest: #d0e8ff;
+  }
 }
 
 /* Professional, mature dark mode end */
