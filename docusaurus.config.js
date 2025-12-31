@@ -20,15 +20,19 @@ const config = {
   },
 
   // Set the production url of your site here
-  url: 'https://MinhalAslam.github.io',
+  url: process.env.DEPLOY_ENV === 'vercel'
+    ? 'https://physical-ai-book-humanoid-robotics-alpha.vercel.app'
+    : 'https://minhalaslam.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/Physical_ai_book_humanoid_robotics/',
+  baseUrl: process.env.DEPLOY_ENV === 'vercel'
+    ? '/'
+    : '/Physical_ai_book_humanoid_robotics/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'MinhalAslam', // Usually your GitHub org/user name.
-  projectName: 'Physical_ai_book_humanoid_robotics', // Usually your repo name.
+  organizationName: process.env.DEPLOY_ENV === 'vercel' ? 'MinhalAslam' : 'MinhalAslam', // Usually your GitHub org/user name.
+  projectName: process.env.DEPLOY_ENV === 'vercel' ? 'Physical_ai_book_humanoid_robotics' : 'Physical_ai_book_humanoid_robotics', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   trailingSlash: false,
@@ -85,7 +89,7 @@ const config = {
             label: 'Tutorial',
           },
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/MinhalAslam/Physical_ai_book_humanoid_robotics',
             label: 'GitHub',
             position: 'right',
           },
